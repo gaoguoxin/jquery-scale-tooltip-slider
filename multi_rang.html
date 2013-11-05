@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>利用率分析</title>
+  <link rel="stylesheet" href="./jui.css" type="text/css">  
+<!--   <link rel="stylesheet" href="./jquery-ui.css" type="text/css"> -->
+  <script src="/home/naitnix/workspace/123/js/jquery1.9.1.js" type="text/javascript"></script>
+  <script src="/home/naitnix/workspace/123/js/jquery-ui-1.10.3.js" type="text/javascript"></script>
+  <style type="text/css">
+    .slide {
+      margin-top: 20px;
+      margin-left: 20px;
+      width: 400px;
+      background: red;
+    }
+    .slide-back {
+      position:absolute;
+      height:100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide" id="slide1"></div>
+  <script type="text/javascript">
+    $(function(){
+      var doUpdate = function(event, ui) {
+        $('#slide1 .slide-back').remove();
+        $($('#slide1 a').get().reverse()).each(function(i) {
+            var bg = '#fff';
+            if(i == 1) {
+                bg = '#00f';
+            } else if(i == 2) {
+                bg = '#0f0';
+            } else if(i == 3) {
+                bg = '#f00';
+            } else if(i == 4) {
+                bg = '#0ff';
+            }
+            
+            $('#slide1').append($('<div></div>').addClass('slide-back').width($(this).offset().left - 5).css('background', bg));
+        });
+      };
+    
+    var tooltip = $('<div id="tooltip" />').css({
+      position:'absolute',
+      top: -20,
+      left: -10,
+      color:'black'
+    }).hide();
+
+    var s = $('#slide1').slider({
+      animate:'slow',
+      disabled:false,
+      min:0,
+      max:100,
+      orientation:'horizontal',
+      step:10,
+      values:[ 10, 30, 50, 70, 80 ],
+      slide:function(event,ui){
+        doUpdate();
+        tooltip.text(ui.value);
+      },
+      create:doUpdate,
+      change:doUpdate
+    }).find('.ui-slider-handle').append(tooltip).hover(function(){
+      tooltip.show();
+    },function(){
+      tooltip.hide();
+    });
+
+
+    //doUpdate();
+    })
+  </script>
+</body>

@@ -1,0 +1,175 @@
+.ui-widget {font-family: inherit;font-size: 1em;}
+.ui-widget .ui-widget {font-size: 1em;}
+
+.ui-slider-wrapper { position: relative; }
+.ui-slider-wrapper.horizontal { height: 4.5em; }
+.ui-slider-wrapper.vertical { width: 4.5em; }
+
+
+.ui-slider-labels { 
+  position: absolute; 
+}
+.horizontal .ui-slider-labels {
+  width:100%; 
+  left: 0; 
+  right: 0; 
+  top: 17px 
+}
+.vertical .ui-slider-labels { 
+  top: 1px; 
+  bottom: 0; 
+  left: 17px;
+  height:700px; 
+}
+
+.ui-slider-label-ticks { position: absolute; white-space: nowrap; }
+.horizontal .ui-slider-label-ticks { width: 1.2em; height: 5px; text-align: center; border-left: 1px solid #999; }
+.vertical .ui-slider-label-ticks { height: 1.2em; width: 5px; border-bottom: 1px solid #999; }
+
+
+.ui-slider-label-ticks span { font-size: 0.9em; min-width: 1.2em; }
+.horizontal .ui-slider-label-ticks span { position: absolute; display: inline-block; margin-left: -1.2em; top: 6px; }
+.vertical .ui-slider-label-ticks span { position: absolute; display: inline-block; left: 6px; margin-top: .8em; }
+
+
+
+.ui-slider-wrapper .ui-slider-horizontal { width: 100%; }
+.ui-slider-wrapper .ui-slider-vertical { height: 100%; }
+
+
+.ui-slider {position: relative;text-align: left;}
+.ui-slider-horizontal {
+  height: .8em;
+  background: #ffffff url(../images/line.png) no-repeat;
+}
+.ui-slider-vertical {
+  width: .8em;
+  background: #ffffff url(../images/vertical_line.png) no-repeat;
+}
+
+/* custom the progress bar style*/
+.ui-widget-content {
+  /*border: 1px solid #aaaaaa;*/
+  border:none;
+  color: #222222;
+}
+
+/* set the corner of the progressbar  and the drag  handle */
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+  border-bottom-right-radius: 4px;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+  border-bottom-left-radius: 4px;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+  border-top-right-radius: 4px;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+  border-top-left-radius: 4px;
+}
+
+/* start set the drag handle style */
+.ui-widget-content a {color: #222222;}
+
+/* you can set the drag handle width, height,cursor...*/
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1.2em;
+  height: 1.2em;
+  cursor: default;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: -.3em;
+  margin-left: -.6em;
+}
+
+
+.ui-slider-vertical .ui-slider-handle {
+  left: -.3em;
+  margin-left: 0;
+  margin-bottom: -.6em;
+}
+
+/* set the drag handle style */
+.ui-slider-horizontal .ui-state-default, .ui-slider-horizontal .ui-widget-content .ui-state-default, .ui-slider-horizontal .ui-widget-header .ui-state-default {
+  /*border: 1px solid #d3d3d3;*/
+  background: #e6e6e6 url(../images/timeNode.png) no-repeat 0px -24px;
+  font-weight: normal;
+  color: #555555;
+  width:17px;
+  height:23px;
+  outline: none;
+}
+
+.ui-slider-vertical .ui-state-default, .ui-slider-vertical .ui-widget-content .ui-state-default, .ui-slider-vertical .ui-widget-header .ui-state-default {
+  /*border: 1px solid #d3d3d3;*/
+  background: #e6e6e6 url(../images/vertical_timeNode.png) no-repeat 0px 0px;
+  font-weight: normal;
+  color: #555555;
+  width:23px;
+  height:17px;
+  outline: none;
+}
+
+
+/* end set the drag handle style */
+
+
+/* start for style select regon */
+.ui-widget-header {
+  border: 1px solid #aaaaaa;
+  color: #222222;
+  font-weight: bold;
+}
+.ui-widget-header a {
+  color: #222222;
+}
+
+.ui-slider-horizontal .ui-widget-header{
+  background: url(../images/h_region.png) repeat-x ;
+}
+
+.ui-slider-vertical .ui-widget-header{
+  background: url(../images/v_region.png) repeat-y ;
+}
+
+.ui-slider .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: .7em;
+  display: block;
+  border: 0;
+  background-position: 0 0;
+}
+
+/* For IE8 - See #6727 */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range {
+  filter: inherit;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+  left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+  right: 0;
+}
+
+.ui-slider-vertical .ui-slider-range {
+  left: 0;
+  width: 100%;
+}
+.ui-slider-vertical .ui-slider-range-min {
+  bottom: 0;
+}
+.ui-slider-vertical .ui-slider-range-max {
+  top: 0;
+}
+
+/* end for style select regon */
